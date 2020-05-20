@@ -10,7 +10,11 @@ import com.gain.java.knowledge.JunitWithMockito.model.Employee;
 @Repository
 public class EmployeeDao {
 
-	List<Employee> employees = new CopyOnWriteArrayList<Employee>();
+	static List<Employee> employees = new CopyOnWriteArrayList<Employee>();
+	 
+	static {
+		employees.add(new Employee(1, "karan", "Gain Java Knowledge"));
+	}
 
 	public List<Employee> getEmployees() {
 		return employees;

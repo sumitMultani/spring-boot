@@ -38,7 +38,7 @@ public class EmployeeControllerTest {
 	
 	public static final Employee employee = Employee.builder()
 			.id(1)
-			.name("ravi")
+			.name("karan")
 			.message("Gain Java Knowledge")
 			.build();
 	
@@ -71,6 +71,7 @@ public class EmployeeControllerTest {
 		List<Employee> response = MAPPER.readValue(result.getResponse()
 				.getContentAsString(), new TypeReference<List<Employee>>() {
 		});
+		employees.add(employee);
 		assertEquals(employees, response);
 	}
 	
